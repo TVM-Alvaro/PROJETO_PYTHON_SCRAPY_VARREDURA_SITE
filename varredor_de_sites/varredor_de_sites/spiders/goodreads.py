@@ -20,8 +20,8 @@ class QuotesToScrapeSpider(scrapy.Spider):
         # aqui é onde você deve processar o que é retornado da response
         for elemento in response.xpath("//div[@class='quote']"):
             yield {
-                'frase': elemento.xpath(".//div[@class='quoteText']/text()").get(),
-                'autor': elemento.xpath(".//span[@class='authorOrTitle']/text()").get(),
+                'frase': elemento.xpath(".//div[@class='quoteText']/text()").get().strip(),
+                'autor': elemento.xpath(".//span[@class='authorOrTitle']/text()").get().strip(),
                 # para achar as tags foi usado um xpath composto.
                 'tags': elemento.xpath(".//div[@class='greyText smallText left']/a/text()").getall()
             }
