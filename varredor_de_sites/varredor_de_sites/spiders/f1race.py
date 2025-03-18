@@ -15,7 +15,7 @@ from time import sleep
 def iniciar_driver():
     chrome_options = Options()
     LOGGER.setLevel(logging.WARNING)
-    arguments = ['--lang=pt-BR', '--window-size=1920,1080', '--headless']
+    arguments = ['--lang=pt-BR', '--window-size=1920,1080', '--headless=new', '--disable-gpu']
     for argument in arguments:
         chrome_options.add_argument(argument)
 
