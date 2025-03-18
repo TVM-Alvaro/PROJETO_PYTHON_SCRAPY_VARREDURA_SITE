@@ -40,7 +40,7 @@ def iniciar_driver():
     return driver, wait
 
 
-class ProductScraperSpider(scrapy.Spider):
+class F1RacesSpider(scrapy.Spider):
     # identidade
     name = 'f1racebot'
     # Request
